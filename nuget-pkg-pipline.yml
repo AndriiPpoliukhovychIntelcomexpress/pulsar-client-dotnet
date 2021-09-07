@@ -4,14 +4,14 @@
 # https://aka.ms/yaml
 
 trigger:
-- develop-with-ci
+- develop-with-ci-v2
 
 name: $(Build.DefinitionName)_$(SourceBranchName)_$(Date:yyyyMMdd)$(Rev:.r)
 
 variables:
-  Version: 2.8.0.3
+  Version: 2.7.2.1
   Prerelease: $[format('{0:yyyyMMddHHmmss}', pipeline.startTime)]
-  isMain: $[eq(variables['Build.SourceBranch'], 'refs/heads/develop-with-ci')]
+  isMain: $[eq(variables['Build.SourceBranch'], 'refs/heads/develop-with-ci-v2')]
 
 pool:
   vmImage: windows-latest
