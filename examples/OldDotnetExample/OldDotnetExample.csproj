@@ -39,8 +39,8 @@
       <HintPath>packages\Apache.Avro.1.10.2\lib\netstandard2.0\Avro.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="AvroSchemaGenerator, Version=1.9.0.0, Culture=neutral, PublicKeyToken=null">
-      <HintPath>packages\AvroSchemaGenerator.1.9.0\lib\netstandard2.0\AvroSchemaGenerator.dll</HintPath>
+    <Reference Include="AvroSchemaGenerator, Version=1.9.0.1.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>packages\AvroSchemaGenerator.1.9.0.1\lib\netstandard2.0\AvroSchemaGenerator.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="DerConverter, Version=3.0.0.82, Culture=neutral, PublicKeyToken=null">
