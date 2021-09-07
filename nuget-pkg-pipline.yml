@@ -9,7 +9,7 @@ trigger:
 name: $(Build.DefinitionName)_$(SourceBranchName)_$(Date:yyyyMMdd)$(Rev:.r)
 
 variables:
-  Version: 2.7.2.2
+  Version: 2.7.2.3
   Prerelease: $[format('{0:yyyyMMddHHmmss}', pipeline.startTime)]
   isMain: $[eq(variables['Build.SourceBranch'], 'refs/heads/develop-with-ci-v2')]
 
