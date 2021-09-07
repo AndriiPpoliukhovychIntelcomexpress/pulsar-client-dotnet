@@ -1,0 +1,27 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+trigger:
+- develop-with-ci
+
+name: $(Build.DefinitionName)_$(SourceBranchName)_$(Date:yyyyMMdd)$(Rev:.r)
+
+variables:
+  Version: 2.8.0.3
+  Prerelease: $[format('{0:yyyyMMddHHmmss}', pipeline.startTime)]
+  isMain: $[eq(variables['Build.SourceBranch'], 'refs/heads/develop-with-ci')]
+
+pool:
+  vmImage: windows-latest
+
+steps:
+
+- task: NuGetCommand@2
+  displayName: Push Nuget Package 
+  inputs:
+    command: 'push'
+    packagesToPush: '$(Build.SourcesDirectory)/*.nupkg;'
+    nuGetFeedType: 'internal'
+    publishVstsFeed: '8cdc488b-0e8f-4ae6-ab92-6cc8b564aedd/daa7dfc6-f270-4785-ad0b-0db93bfca1ff'
